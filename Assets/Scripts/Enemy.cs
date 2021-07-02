@@ -15,7 +15,10 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
-        var speed = _direction.normalized * _speed * Time.fixedDeltaTime;
-        transform.Translate(speed);
+        if (gameObject.tag == "Enemy")
+        {
+            var speed = _direction.normalized * _speed * Time.fixedDeltaTime;
+            transform.Translate(speed);
+        }
     }
 }

@@ -4,21 +4,9 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (other.CompareTag("Enemy"))
         {
             Destroy(other.gameObject);
             Destroy(gameObject);
