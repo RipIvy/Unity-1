@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class PlayerMoving : MonoBehaviour
 {
-    [SerializeField] private float _speed = 5f;
-    [SerializeField] private float _turnSpeed = 1f;
+    [SerializeField] private float _speed;
+    [SerializeField] private float _turnSpeed ;
     
     Vector3 _direction;
-    private float _rotation = 0f;
+    private float _rotation;
 
-    void Update()
+    private void Update()
     {
         _direction.z = Input.GetAxis("Vertical");
-        _rotation = Input.GetAxis("Horizontal") * _turnSpeed;
+        _direction.x = Input.GetAxis("Horizontal");
+        _rotation = Input.GetAxis("Mouse X");
     }
 
     private void FixedUpdate()
     {
-        var speed = _direction.normalized * _speed * Time.fixedDeltaTime;
-        transform.Translate(speed);
-        transform.Rotate(0f, _rotation, 0f);
+        transform.Translate(_direction.normalized * _speed * Time.fixedDeltaTime);
+        transform.Rotate(Vector3.up * _rotation * _turnSpeed * Time.fixedDeltaTime);
     }
 }
