@@ -200,6 +200,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4944205014799444694}
+  - component: {fileID: 5956007252787845368}
+  - component: {fileID: 1507906285552251483}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -224,6 +226,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5956007252787845368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789586103494949788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e01e1aceda50afa4599fe1b11b24edee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 0}
+  _bulletPrefab: {fileID: 358028583626645422, guid: 31b40e34ad00c3a449ebbc5095798008, type: 3}
+  pointSpawn: {fileID: 8599248619462557915}
+--- !u!135 &1507906285552251483
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789586103494949788}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4905057035280739713
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,8 +263,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8599248619462557915}
-  - component: {fileID: 6055893031724984773}
-  - component: {fileID: 4285169745814808515}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -257,33 +285,6 @@ Transform:
   m_Father: {fileID: 4944205014799444694}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &6055893031724984773
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4905057035280739713}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 10
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4285169745814808515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4905057035280739713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e01e1aceda50afa4599fe1b11b24edee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 0}
-  _bulletPrefab: {fileID: 358028583626645422, guid: 31b40e34ad00c3a449ebbc5095798008, type: 3}
 --- !u!1 &8069660210145437038
 GameObject:
   m_ObjectHideFlags: 0

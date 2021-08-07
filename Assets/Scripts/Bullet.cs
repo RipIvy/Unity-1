@@ -4,20 +4,33 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] public Transform _target;
     [SerializeField] private float _speed;
+
+    bool dead = false;
+
+    private void Start()
+    {
+        StartCoroutine(LiveTime());
+    }
 
     private void FixedUpdate()
     {
-        transform.LookAt(_target);
         transform.Translate(Vector3.forward * _speed * Time.fixedDeltaTime);
+
+        if (dead)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    IEnumerator LiveTime()
+    {
+        yield return new WaitForSeconds(5f);
+        dead = true;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 }
